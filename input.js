@@ -13,8 +13,15 @@ const setupInput = (conn) => {
 
   stdin.on("data", handleUserInput);
 
+  // set up setInterval
+setInterval(() => {
+  connection.write("Move: up");
+}, 200);
+
   return stdin;
 };
+
+
 
 const handleUserInput = function (key) {
   if (key === 'x') {
