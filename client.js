@@ -21,12 +21,16 @@ const connect = function() {
     const userName = "tpm";
     const displayMsg = `Name: ${userName}`;
     conn.write(displayMsg);
+
+
+    const messageToDisplay = "Say: ____";
+    conn.write(messageToDisplay);
   });
+
 
   conn.on('data', function(message) {
     console.log(`${message}`);
   });
-
 
   return conn;
 };
